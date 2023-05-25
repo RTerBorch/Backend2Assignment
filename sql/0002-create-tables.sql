@@ -10,7 +10,7 @@ create table customer_seq (next_val bigint) engine=InnoDB;
 insert into customer_seq values ( 1 );
 
 
-use db_orders;
-create table customer_order (id int not null, primary key (id)) engine=InnoDB;
-create table customer_order_seq (next_val bigint) engine=InnoDB;
-insert into customer_order_seq values ( 1 );
+-- use db_orders;
+-- create table customer_order (id int not null, primary key (id)) engine=InnoDB;
+-- create table customer_order_seq (next_val bigint) engine=InnoDB;
+-- insert into customer_order_seq values ( 1 ); 

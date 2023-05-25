@@ -1,8 +1,7 @@
 package com.example.SpringDatabaseOrderService;
 
+import com.example.SpringDatabaseOrderService.Modells.CustomerOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 public interface OrderRepo extends JpaRepository<CustomerOrder, Long> {
 }

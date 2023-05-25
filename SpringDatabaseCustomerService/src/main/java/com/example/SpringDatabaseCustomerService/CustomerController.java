@@ -38,5 +38,8 @@ public class CustomerController {
         return "addCustomer";
     }
 
-
+    @RequestMapping("/customers/{id}/name")
+    public @ResponseBody String getCustomerName(@PathVariable long id) {
+        return customerRepo.findById(id).orElse(null).getName();
+    }
 }

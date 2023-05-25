@@ -1,9 +1,11 @@
-package com.example.SpringDatabaseOrderService;
+package com.example.SpringDatabaseOrderService.Modells;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -14,4 +16,12 @@ public class CustomerOrder {
     @GeneratedValue
     private Long id;
 
+    private Long customerID;
+
+    @ElementCollection
+    private List<Long> itemIDList;
+
+    public CustomerOrder(Long customerID) {
+        customerID = id;
+    }
 }
