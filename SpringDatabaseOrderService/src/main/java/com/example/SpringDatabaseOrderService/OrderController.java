@@ -31,7 +31,8 @@ public class OrderController {
 
     @GetMapping("/addOrder")
     public @ResponseBody String addCustomer(@RequestParam Long customerID) {
-        CustomerOrder order = new CustomerOrder(customerID);
+        CustomerOrder order = new CustomerOrder();
+        order.setCustomerId(customerID);
         orderRepo.save(order);
         return "Order " + order.getId() + " has been saved.";
     }
@@ -39,7 +40,7 @@ public class OrderController {
     @RequestMapping("/order/{id}")
     public @ResponseBody CustomerOrderWithName getOrderByID(@PathVariable Long id){
        CustomerOrder order =  orderRepo.findById(id).get();
-       String customerResourceURL = customerServiceBaseUrl + "/customers/" + order.getCustomerID() + "/name";
+       String customerResourceURL = customerServiceBaseUrl + "/customers/" + order.getCustomerId() + "/name";
        String customerName = restTemplate.getForObject(customerResourceURL, String.class);
 
        return new CustomerOrderWithName(id, customerName);

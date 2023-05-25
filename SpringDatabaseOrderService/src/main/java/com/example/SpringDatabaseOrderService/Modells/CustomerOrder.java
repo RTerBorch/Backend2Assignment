@@ -16,12 +16,9 @@ public class CustomerOrder {
     @GeneratedValue
     private Long id;
 
-    private Long customerID;
+    private Long customerId;
 
     @ElementCollection
     private List<Long> itemIDList;
 
-    public CustomerOrder(Long customerID) {
-        customerID = id;
-    }
 }
