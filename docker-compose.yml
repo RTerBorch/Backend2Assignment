@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+    volumes:
+    - "./sql:/docker-entrypoint-initdb.d"
+
+  product-service:
+    build: ./SpringDatabaseProductService
+    ports:
+      - "8080:8080"
+    environment:
+      - CUSTOMER_SERVICE_URL=http://customer-service:8081/
+      - ORDER_SERVICE_URL=http://order-service:8083/
+      - MYSQL_HOST=mysql
+
+  customer-service:
+    build: ./SpringDatabaseCustomerService
+    ports:
+      - "8082:8080"
+    environment:
+      - PRODUCT_SERVICE_URL=http://product-service:8080/
+      - ORDER_SERVICE_URL=http://order-service:8083/
+      - MYSQL_HOST=mysql
+
+  order-service:
+    build: ./SpringDatabaseOrderService
+    ports:
+      - "8083:8080"
+    environment:
+      - PRODUCT_SERVICE_URL=http://product-service:8080/
+      - CUSTOMER_SERVICE_URL=http://customer-service:8081/
+      - MYSQL_HOST=mysql
+
+  
