@@ -13,6 +13,7 @@ services:
     ports:
       - "8080:8080"
     environment:
+      - DB_PASSWORD=${DB_PASSWORD}
       - CUSTOMER_SERVICE_URL=http://customer-service:8082/
       - ORDER_SERVICE_URL=http://order-service:8083/
       - MYSQL_HOST=mysql
@@ -22,6 +23,7 @@ services:
     ports:
       - "8082:8080"
     environment:
+      - DB_PASSWORD=${DB_PASSWORD}
       - PRODUCT_SERVICE_URL=http://product-service:8080/
       - ORDER_SERVICE_URL=http://order-service:8083/
       - MYSQL_HOST=mysql
@@ -31,6 +33,7 @@ services:
     ports:
       - "8083:8080"
     environment:
+      - DB_PASSWORD=${DB_PASSWORD}
       - PRODUCT_SERVICE_URL=http://product-service:8080/
       - CUSTOMER_SERVICE_URL=http://customer-service:8082/
       - MYSQL_HOST=mysql

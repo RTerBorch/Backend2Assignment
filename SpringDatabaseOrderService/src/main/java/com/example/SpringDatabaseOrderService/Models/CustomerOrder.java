@@ -1,4 +1,4 @@
-package com.example.SpringDatabaseOrderService.Modells;
+package com.example.SpringDatabaseOrderService.Models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

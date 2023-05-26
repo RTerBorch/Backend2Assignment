@@ -1,7 +1,7 @@
 package com.example.SpringDatabaseOrderService;
 
-import com.example.SpringDatabaseOrderService.Modells.CustomerOrder;
-import com.example.SpringDatabaseOrderService.Modells.CustomerOrderWithName;
+import com.example.SpringDatabaseOrderService.Models.CustomerOrder;
+import com.example.SpringDatabaseOrderService.Models.CustomerOrderWithName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
