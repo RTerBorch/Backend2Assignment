@@ -7,7 +7,7 @@ insert into item_seq values ( 1 );
 use db_customers;
 create table customer (id int not null, name varchar(30), ssn varchar(30), primary key (id)) engine=InnoDB;
 create table customer_seq (next_val bigint) engine=InnoDB;
-insert into customer_seq values ( 1 );
+insert into customer_seq values ( 6 );
 
 
 use db_orders;
