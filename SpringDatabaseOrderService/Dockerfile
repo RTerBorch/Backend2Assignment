@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17
+FROM eclipse-temurin:19
 VOLUME /tmp
 ARG JAR_FILE=build/libs/SpringDatabaseOrderService.jar
 COPY ${JAR_FILE} app.jar
